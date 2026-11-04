@@ -9,7 +9,18 @@ Securing modern **Active Directory (AD)** environments is one of the toughest ch
 2. **Detects Anomalies:** Combines rigid security rules with unsupervised machine learning (Isolation Forest UEBA) to spot abnormal user behavior (e.g., off-hours RDP logons or weak encryption requests).
 3. **Maps the Threat:** Generates an interactive blast-radius network graph so you can visually trace how an attacker moves from a compromised machine to valuable Service Principal Names (SPNs).
 4. **Triages & Contains Locally:** Uses a local **Ollama (Llama 3)** model to analyze the incident and generate a plain-English security briefing and pre-written PowerShell containment commands (like disabling compromised accounts) without leaking sensitive corporate data to external cloud APIs.
+## 📐 System Architecture & Remediation Flow
 
+```mermaid
+graph TD
+    A[Windows Event Logs] -->|evtx_parser.py| B(Telemetry Ingestion)
+    B --> C{Hybrid Detection Engine}
+    C -->|Deterministic| D[Kerberoasting Rules RC4]
+    C -->|Unsupervised| E[Isolation Forest UEBA]
+    D & E --> F[Risk Scoring & Tiers 1-3]
+    F --> G[PyVis Blast-Radius Attack Graph]
+    F --> H[Local Ollama Llama 3 GenAI Triage]
+    H --> I[Automated PowerShell Remediation: Disable-ADAccount]
 ---
 
 ## 📸 Project Visuals & Execution
