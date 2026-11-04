@@ -48,6 +48,10 @@ Securing modern **Active Directory (AD)** environments is one of the toughest ch
 4. **Local GenAI Triage Agent (`ai_llm_agent.py`)**: Integrates with local Ollama (`llama3`) to synthesize automated incident reports mapped directly to **MITRE ATT&CK (`T1558.003` & `T1078`)**.
     
    > *Note: Ensure Ollama is installed and running locally with `ollama run llama3` to enable autonomous local GenAI incident triage briefings.*
+   ### Prerequisites
+* **Ollama** installed locally. Before running the pipeline, ensure the model is pulled and ready by running:
+  ```bash
+  ollama pull llama3
 6. **Streamlit Web Dashboard (`app.py`)**: A modern SOC analyst interface providing live metrics, interactive tabs, and autonomous containment controls.
 
 ---
