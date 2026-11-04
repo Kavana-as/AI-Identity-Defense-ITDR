@@ -9,22 +9,13 @@ An automated Active Directory defense pipeline combining Windows Event Telemetry
 ### 1. Hybrid Detection Engine (CLI)
 ![CLI Detection Engine](assets/1_cli_detection.PNG)
 *Running the detection engine locally to correlate deterministic Kerberoasting rules and Isolation Forest UEBA anomalies, scoring compromised identity `john.doe` at 100/100.*
-
 ### 2. Identity Attack Path & Blast Radius Graph
-<table width="100%">
-  <tr>
-    <td width="50%" align="center">
-      <img src="assets/2_attack_graph.PNG" alt="Attack Graph" width="100%" />
-      <br />
-      <em>Interactive PyVis blast-radius visualization mapping source RDP compromise nodes to targeted production Service Principal Names (SPN diamonds).</em>
-    </td>
-    <td width="50%" align="center">
-      <img src="assets/2_web_launch.PNG" alt="Web Launch Interface" width="100%" />
-      <br />
-      <em>Streamlit web launch and dashboard interface showcasing live SOC controls.</em>
-    </td>
-  </tr>
-</table>
+
+![Attack Graph](assets/2_attack_graph.PNG)
+*Interactive PyVis blast-radius visualization mapping source RDP compromise nodes to targeted production Service Principal Names (SPN diamonds).*
+
+![Web Launch Interface](assets/2_web_launch.PNG)
+*Streamlit web launch and dashboard interface showcasing live SOC controls.*
 
 ### 3. Graduated Containment Panel
 ![Containment Panel](assets/3_containment_panel.PNG)
