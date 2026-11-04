@@ -48,39 +48,39 @@ Securing modern **Active Directory (AD)** environments is one of the toughest ch
 4. **Local GenAI Triage Agent (`ai_llm_agent.py`)**: Integrates with local Ollama (`llama3`) to synthesize automated incident reports mapped directly to **MITRE ATT&CK (`T1558.003` & `T1078`)**.
     
    > *Note: Ensure Ollama is installed and running locally with `ollama run llama3` to enable autonomous local GenAI incident triage briefings.*
+   > ### Prerequisites
+* **Ollama** installed locally. Before running the pipeline, ensure the model is pulled and ready by running:
+  ```bash
+  ollama pull llama3
 
 5. **Streamlit Web Dashboard (`app.py`)**: A modern SOC analyst interface providing live metrics, interactive tabs, and autonomous containment controls.
 
 ---
 
 ## 🚀 Quick Start
-  
-1.  **Ollama** installed locally. Before running the pipeline, ensure the model is pulled and ready by running:
-  ```bash
-  ollama pull llama3
 
-2. Clone the repository:
+1. Clone the repository:
    ```bash
    git clone [https://github.com/Kavana-as/AI-Identity-Defense-ITDR.git](https://github.com/Kavana-as/AI-Identity-Defense-ITDR.git)
    cd AI-Identity-Defense-ITDR
 
-3. Create and activate a virtual environment:
+2. Create and activate a virtual environment:
     ```bash
     PowerShell
     python -m venv .venv
     .venv\Scripts\Activate.ps1
    
-4. Install dependencies:
+3. Install dependencies:
     ```bash
     PowerShell
     pip install -r requirements.txt
    
-5. Run the hybrid detection engine:
+4. Run the hybrid detection engine:
     ```bash
     PowerShell
     python ai_ueba_engine.py
    
-6. Launch the Streamlit SOC Web Dashboard:
+5. Launch the Streamlit SOC Web Dashboard:
     ```bash
     PowerShell
     streamlit run app.py
