@@ -12,8 +12,22 @@ An automated Active Directory defense pipeline combining Windows Event Telemetry
 
 ### 2. Identity Attack Path & Blast Radius Graph
 ![Attack Graph](assets/2_attack_graph.PNG)
-!(assets/2_web_launch.PNG)
 *Interactive PyVis blast-radius visualization mapping source RDP compromise nodes to targeted production Service Principal Names (SPN diamonds).*
+### 2. Identity Attack Path & Blast Radius Graph
+<table width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <img src="assets/2_attack_graph.PNG" alt="Attack Graph" width="100%" />
+      <br />
+      <em>Interactive PyVis blast-radius visualization mapping source RDP compromise nodes to targeted production Service Principal Names (SPN diamonds).</em>
+    </td>
+    <td width="50%" align="center">
+      <img src="assets/2_web_launch.PNG" alt="Web Launch Interface" width="100%" />
+      <br />
+      <em>Streamlit web launch and dashboard interface showcasing live SOC controls.</em>
+    </td>
+  </tr>
+</table>
 
 ### 3. Graduated Containment Panel
 ![Containment Panel](assets/3_containment_panel.PNG)
