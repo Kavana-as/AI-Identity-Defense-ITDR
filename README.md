@@ -54,17 +54,17 @@ Securing modern **Active Directory (AD)** environments is one of the toughest ch
 ---
 
 ## 🚀 Quick Start
-   ### Prerequisites
-**Ollama** installed locally. Before running the pipeline, ensure the model is pulled and ready by running:
+  
+1.  **Ollama** installed locally. Before running the pipeline, ensure the model is pulled and ready by running:
   ```bash
   ollama pull llama3
-  
-1. Clone the repository:
+
+2. Clone the repository:
    ```bash
    git clone [https://github.com/Kavana-as/AI-Identity-Defense-ITDR.git](https://github.com/Kavana-as/AI-Identity-Defense-ITDR.git)
    cd AI-Identity-Defense-ITDR
 
-2. Create and activate a virtual environment:
+3. Create and activate a virtual environment:
     ```bash
     PowerShell
     python -m venv .venv
@@ -75,12 +75,12 @@ Securing modern **Active Directory (AD)** environments is one of the toughest ch
     PowerShell
     pip install -r requirements.txt
    
-6. Run the hybrid detection engine:
+5. Run the hybrid detection engine:
     ```bash
     PowerShell
     python ai_ueba_engine.py
    
-8. Launch the Streamlit SOC Web Dashboard:
+6. Launch the Streamlit SOC Web Dashboard:
     ```bash
     PowerShell
     streamlit run app.py
