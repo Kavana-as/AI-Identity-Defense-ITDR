@@ -48,3 +48,20 @@ An automated Active Directory defense pipeline combining Windows Event Telemetry
    ```bash
    git clone [https://github.com/Kavana-as/AI-Identity-Defense-ITDR.git](https://github.com/Kavana-as/AI-Identity-Defense-ITDR.git)
    cd AI-Identity-Defense-ITDR
+
+2. Create and activate a virtual environment:
+    PowerShell
+    python -m venv .venv
+    .venv\Scripts\Activate.ps1
+   
+4. Install dependencies:
+    PowerShell
+    pip install -r requirements.txt
+   
+5. Run the hybrid detection engine:
+    PowerShell
+    python ai_ueba_engine.py
+   
+6. Launch the Streamlit SOC Web Dashboard:
+    PowerShell
+    streamlit run app.py
