@@ -10,6 +10,8 @@ Securing modern **Active Directory (AD)** environments is one of the toughest ch
 3. **Maps the Threat:** Generates an interactive blast-radius network graph so you can visually trace how an attacker moves from a compromised machine to valuable Service Principal Names (SPNs).
 4. **Triages & Contains Locally:** Uses a local **Ollama (Llama 3)** model to analyze the incident and generate a plain-English security briefing and pre-written PowerShell containment commands (like disabling compromised accounts) without leaking sensitive corporate data to external cloud APIs.
 ## 📐 System Architecture & Remediation Flow
+---
+## 📐 System Architecture & Remediation Flow
 
 ```mermaid
 graph TD
@@ -22,7 +24,6 @@ graph TD
     F --> H[Local Ollama Llama 3 GenAI Triage]
     H --> I[Automated PowerShell Remediation: Disable-ADAccount]
 ---
-
 ## 📸 Project Visuals & Execution
 
 ### 1. Hybrid Detection Engine (CLI)
