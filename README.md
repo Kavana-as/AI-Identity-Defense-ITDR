@@ -50,18 +50,22 @@ An automated Active Directory defense pipeline combining Windows Event Telemetry
    cd AI-Identity-Defense-ITDR
 
 2. Create and activate a virtual environment:
+    ```bash
     PowerShell
     python -m venv .venv
     .venv\Scripts\Activate.ps1
    
 4. Install dependencies:
+    ```bash
     PowerShell
     pip install -r requirements.txt
    
-5. Run the hybrid detection engine:
+6. Run the hybrid detection engine:
+    ```bash
     PowerShell
     python ai_ueba_engine.py
    
-6. Launch the Streamlit SOC Web Dashboard:
+8. Launch the Streamlit SOC Web Dashboard:
+    ```bash
     PowerShell
     streamlit run app.py
