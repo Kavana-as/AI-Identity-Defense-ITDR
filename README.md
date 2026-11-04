@@ -11,7 +11,7 @@ An automated Active Directory defense pipeline combining Windows Event Telemetry
 *Running the detection engine locally to correlate deterministic Kerberoasting rules and Isolation Forest UEBA anomalies, scoring compromised identity `john.doe` at 100/100.*
 
 ### 2. Identity Attack Path & Blast Radius Graph
-![Attack Graph](assets/2_attack_graph.PNG)
+![Attack Graph](assets/2_attack_graph.PNG)(assets/2_web_launch.PNG)
 *Interactive PyVis blast-radius visualization mapping source RDP compromise nodes to targeted production Service Principal Names (SPN diamonds).*
 
 ### 3. Graduated Containment Panel
