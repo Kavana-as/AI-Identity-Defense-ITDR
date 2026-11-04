@@ -20,6 +20,8 @@ An automated Active Directory defense pipeline combining Windows Event Telemetry
 ### 3. Graduated Containment Panel
 ![Containment Panel](assets/3_containment_panel.PNG)
 *Automated Tier 3 hard containment evaluating risk severity and generating pre-written PowerShell remediation scripts (`Disable-ADAccount`).*
+![Kerberoasting and Signature Detection](assets/3_Kerberoasting&Signature_Detection.PNG)
+
 
 ### 4. Local AI SecOps Incident Briefing
 ![AI Triage Report](assets/4_ai_triage_report.PNG)
