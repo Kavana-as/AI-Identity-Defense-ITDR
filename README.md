@@ -54,7 +54,11 @@ Securing modern **Active Directory (AD)** environments is one of the toughest ch
 ---
 
 ## 🚀 Quick Start
-
+   ### Prerequisites
+* **Ollama** installed locally. Before running the pipeline, ensure the model is pulled and ready by running:
+  ```bash
+  ollama pull llama3
+  
 1. Clone the repository:
    ```bash
    git clone [https://github.com/Kavana-as/AI-Identity-Defense-ITDR.git](https://github.com/Kavana-as/AI-Identity-Defense-ITDR.git)
