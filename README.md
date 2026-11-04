@@ -49,7 +49,7 @@ Securing modern **Active Directory (AD)** environments is one of the toughest ch
     
    > *Note: Ensure Ollama is installed and running locally with `ollama run llama3` to enable autonomous local GenAI incident triage briefings.*
    > ### Prerequisites
-> **Ollama** installed locally. Before running the pipeline, ensure the model is pulled and ready by running:
+**Ollama** installed locally. Before running the pipeline, ensure the model is pulled and ready by running:
   ```bash
   ollama pull llama3
 
