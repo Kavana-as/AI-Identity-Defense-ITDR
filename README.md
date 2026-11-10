@@ -2,8 +2,6 @@
 
 ## 💡 What is this project?
 
-## 💡 What is this project?
-
 Securing modern **Active Directory (AD)** environments is one of the toughest challenges in enterprise cybersecurity. Attackers frequently use stealthy credential theft techniques—ranging from legacy RC4 (`0x17`) downgrades to advanced **AES-256 (`0x12`) Kerberoasting sweeps** and off-hours lateral movement—that easily bypass traditional signature-based security tools.
 
 **AI-Driven Identity Threat Detection & Response (ITDR) (v2.0)** is an autonomous security watchdog built to close this visibility gap. Acting as an early-warning and automated containment system for your domain controllers, it executes four critical functions:
