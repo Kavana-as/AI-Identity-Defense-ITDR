@@ -14,7 +14,35 @@ Securing modern **Active Directory (AD)** environments is one of the toughest ch
 
 ## 📐 System Architecture & Remediation Flow
 ![System Architecture](assets/Core.PNG)
+## 📐 System Architecture & Remediation Flow (v2.0)
 
+```mermaid
+flowchart TD
+    subgraph Ingestion ["1. Telemetry Ingestion Layer (evtx_parser.py)"]
+        A[Windows Event Logs / EVTX] -->|Event ID 4624| B(Logon Telemetry: Type 10 RDP, Off-Hours)
+        A -->|Event ID 4769| C(Kerberos TGS Requests: 0x17 RC4 & 0x12 AES-256)
+    end
+
+    subgraph Engine ["2. Hybrid Detection Engine (ai_ueba_engine.py)"]
+        B & C --> D{Hybrid Correlation}
+        D -->|Deterministic Rules| E[Signature Hit: Legacy RC4 0x17 Downgrade]
+        D -->|Isolation Forest UEBA| F[Behavioral Anomaly: AES-256 High-Velocity SPN Sweep & Off-Hours RDP]
+        E & F --> G[Correlated Risk Scoring: 0 - 100]
+    end
+
+    subgraph Analysis ["3. Visuals, XAI & Local GenAI Triage"]
+        G --> H[Blast-Radius Graph: PyVis Network Mapping]
+        G --> I[Explainable AI XAI: Peer Baseline Delta Comparison]
+        I --> J[Local Ollama Llama 3 Agent: Privacy-First MITRE ATT&CK Briefing]
+    end
+
+    subgraph Response ["4. Graduated Containment (app.py)"]
+        G --> K{Risk Tier Evaluation}
+        K -->|Tier 1: Low| L[Log & Monitor]
+        K -->|Tier 2: Medium| M[Enforce MFA / Session Reset]
+        K -->|Tier 3: Critical| N[Auto-Generate PowerShell: Disable-ADAccount & Revoke Tokens]
+    end
+```
 ---
 
 ## 📸 Project Visuals & Execution
