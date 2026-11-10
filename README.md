@@ -13,8 +13,6 @@ Securing modern **Active Directory (AD)** environments is one of the toughest ch
 ---
 
 ## 📐 System Architecture & Remediation Flow
-![System Architecture](assets/Core.PNG)
-## 📐 System Architecture & Remediation Flow (v2.0)
 
 ```mermaid
 flowchart TD
