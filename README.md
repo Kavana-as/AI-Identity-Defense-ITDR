@@ -2,15 +2,16 @@
 
 ## 💡 What is this project?
 
-Securing modern **Active Directory (AD)** environments is one of the toughest challenges in enterprise cybersecurity. Attackers frequently use stealthy techniques like credential theft (Kerberoasting) and lateral movement that bypass traditional signature-based security tools.
+## 💡 What is this project?
 
-**AI-Driven Identity Threat Detection & Response (ITDR)** is an autonomous security watchdog built to solve this problem. It acts as an early-warning and automated response system for your domain controllers. In simple terms, it does four critical things:
+Securing modern **Active Directory (AD)** environments is one of the toughest challenges in enterprise cybersecurity. Attackers frequently use stealthy credential theft techniques—ranging from legacy RC4 (`0x17`) downgrades to advanced **AES-256 (`0x12`) Kerberoasting sweeps** and off-hours lateral movement—that easily bypass traditional signature-based security tools.
 
-1. **Watches & Ingests:** Continuously monitors Windows Event logs (like logons and Kerberos ticket requests).
-2. **Detects Anomalies:** Combines rigid security rules with unsupervised machine learning (`IsolationForest` UEBA) to spot abnormal user behavior (e.g., off-hours RDP logons or weak encryption requests).
-3. **Maps the Threat:** Generates an interactive blast-radius network graph so you can visually trace how an attacker moves from a compromised machine to valuable Service Principal Names (SPNs).
-4. **Triages & Contains Locally:** Uses a local **Ollama (Llama 3)** model to analyze the incident and generate a plain-English security briefing and pre-written PowerShell containment commands (like disabling compromised accounts) without leaking sensitive corporate data to external cloud APIs.
+**AI-Driven Identity Threat Detection & Response (ITDR) (v2.0)** is an autonomous security watchdog built to close this visibility gap. Acting as an early-warning and automated containment system for your domain controllers, it executes four critical functions:
 
+1. **Watches & Ingests:** Continuously parses Windows Event telemetry (such as Event ID `4624` logons and Event ID `4769` Kerberos TGS ticket requests).
+2. **Detects Stealthy Anomalies:** Combines deterministic signature rules with unsupervised machine learning (`IsolationForest` UEBA) to catch both known attack patterns and zero-signature behavioral anomalies—including high-velocity AES-256 SPN sweeps and off-hours RDP (`Type 10`) logons.
+3. **Maps the Blast Radius:** Generates an interactive **PyVis network graph** so analysts can visually trace lateral movement from compromised endpoints to high-value Service Principal Names (SPNs).
+4. **Explains, Triages & Contains Locally (XAI + GenAI):** Pairs **Explainable AI (XAI)** peer baseline comparisons with a local **Ollama (Llama 3)** agent to generate privacy-first incident briefings mapped to **MITRE ATT&CK (`T1558.003`, `T1078`)**, complete with graduated PowerShell remediation scripts (`Disable-ADAccount`) without ever exposing sensitive corporate logs to external cloud APIs.
 ---
 
 ## 📐 System Architecture & Remediation Flow
