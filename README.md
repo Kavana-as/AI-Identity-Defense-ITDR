@@ -10,22 +10,6 @@ Securing modern **Active Directory (AD)** environments is one of the toughest ch
 2. **Detects Stealthy Anomalies:** Combines deterministic signature rules with unsupervised machine learning (`IsolationForest` UEBA) to catch both known attack patterns and zero-signature behavioral anomalies—including high-velocity AES-256 SPN sweeps and off-hours RDP (`Type 10`) logons.
 3. **Maps the Blast Radius:** Generates an interactive **PyVis network graph** so analysts can visually trace lateral movement from compromised endpoints to high-value Service Principal Names (SPNs).
 4. **Explains, Triages & Contains Locally (XAI + GenAI):** Pairs **Explainable AI (XAI)** peer baseline comparisons with a local **Ollama (Llama 3)** agent to generate privacy-first incident briefings mapped to **MITRE ATT&CK (`T1558.003`, `T1078`)**, complete with graduated PowerShell remediation scripts (`Disable-ADAccount`) without ever exposing sensitive corporate logs to external cloud APIs.
-### 5. 🆕 v2.0 Upgrade: Stealthy AES-256 Detection & Explainable AI (XAI)
-
-Here is a look at the v2.0 architecture in action, stress-testing the engine against advanced AES-256 (`0x12`) Kerberoasting sweeps where legacy signature rules are bypassed:
-
-**1. Side-by-Side Explainable AI (XAI) & Local Ollama Llama 3 Briefing:**
-![v2.0 AES and XAI View](assets/5_v2_aes_xai_view.PNG)
-*Comparing historical peer baseline deltas and raw Event ID `4769` logs directly beside the autonomous Ollama Llama 3 SecOps report.*
-
-**2. Behavioral UEBA & High-Velocity TGS Sweep Detection:**
-![v2.0 UEBA Table](assets/5.1_v2.0.PNG)
-*Isolation Forest engine catching the high-velocity 12-ticket SPN sweep with a 65 base severity score with zero legacy RC4 signature hits.*
-
-**3. Attack Path & Blast Radius Visualization:**
-![v2.0 Attack Graph](assets/5.2_v2.0.PNG)
-*PyVis attack path graph mapping the compromised `john.doe` account targeting 12 unique production service principal names.*
-
 ---
 
 ## 📐 System Architecture & Remediation Flow
@@ -56,6 +40,21 @@ Here is a look at the v2.0 architecture in action, stress-testing the engine aga
 ### 4. Local AI SecOps Incident Briefing
 ![AI Triage Report](assets/4_ai_triage_report.PNG)
 *Generated local LLM (Ollama / Llama 3) security briefing outlining executive summary, MITRE ATT&CK alignment, and forensic recommendations.*
+### 5. 🆕 v2.0 Upgrade: Stealthy AES-256 Detection & Explainable AI (XAI)
+
+Here is a look at the v2.0 architecture in action, stress-testing the engine against advanced AES-256 (`0x12`) Kerberoasting sweeps where legacy signature rules are bypassed:
+
+**1. Side-by-Side Explainable AI (XAI) & Local Ollama Llama 3 Briefing:**
+![v2.0 AES and XAI View](assets/5_v2_aes_xai_view.PNG)
+*Comparing historical peer baseline deltas and raw Event ID `4769` logs directly beside the autonomous Ollama Llama 3 SecOps report.*
+
+**2. Behavioral UEBA & High-Velocity TGS Sweep Detection:**
+![v2.0 UEBA Table](assets/5.1_v2.0.PNG)
+*Isolation Forest engine catching the high-velocity 12-ticket SPN sweep with a 65 base severity score with zero legacy RC4 signature hits.*
+
+**3. Attack Path & Blast Radius Visualization:**
+![v2.0 Attack Graph](assets/5.2_v2.0.PNG)
+*PyVis attack path graph mapping the compromised `john.doe` account targeting 12 unique production service principal names.*
 
 ---
 
