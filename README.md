@@ -86,14 +86,16 @@ Here is a look at the v2.0 architecture in action, stress-testing the engine aga
 
 ## 🏗️ Architecture & Features
 
+## 🏗️ Architecture & Features
+
 1. **Telemetry Ingestion Layer (`evtx_parser.py`)**: Parses raw Windows Event logs or enterprise baseline templates (Events `4624` for successful logons and `4769` for Kerberos TGS requests).
-2. **Hybrid Detection Engine (`ai_ueba_engine.py`)**: 
-   * **Deterministic Signatures:** Flags offline Kerberoasting attempts by identifying weak RC4 (`0x17`) ticket encryption requests on non-machine accounts.
-   * **Unsupervised UEBA:** Utilizes scikit-learn's `IsolationForest` on logon hours, weekdays, and logon types (e.g., Type 10 RDP off-hours) to detect statistical behavioral anomalies.
-   * **Graduated Response Scoring:** Correlates rule hits and UEBA anomalies into Tiers 1 through 3, automatically generating PowerShell containment commands.
+2. **Hybrid Detection Engine (`ai_ueba_engine.py`)**:
+   - **Deterministic Signatures:** Flags offline Kerberoasting attempts by identifying weak RC4 (`0x17`) ticket encryption requests on non-machine accounts.
+   - **Unsupervised UEBA (v2.0):** Utilizes `scikit-learn`'s `IsolationForest` on logon hours, weekdays, logon types (e.g., Type 10 RDP off-hours), and **high-velocity AES-256 (`0x12`) SPN sweeps** to detect statistical behavioral anomalies that bypass legacy signatures.
+   - **Graduated Response Scoring:** Correlates rule hits and UEBA anomalies into Tiers 1 through 3, automatically generating PowerShell containment commands.
 3. **Interactive Blast-Radius Graph (`attack_graph.py`)**: Renders dynamic network graphs mapping source IPs, user identities, and target SPN assets.
-4. **Local GenAI Triage Agent (`ai_llm_agent.py`)**: Integrates with local Ollama (`llama3`) to synthesize automated incident reports mapped directly to **MITRE ATT&CK (`T1558.003` & `T1078`)**.
-5. **Streamlit Web Dashboard (`app.py`)**: A modern SOC analyst interface providing live metrics, interactive tabs, and autonomous containment controls.
+4. **Explainable AI (XAI) & Local GenAI Triage Agent (`ai_llm_agent.py`)**: Pairs historical peer baseline delta metrics with local Ollama (`llama3`) to synthesize automated, privacy-first incident reports mapped directly to **MITRE ATT&CK (`T1558.003` & `T1078`)**.
+5. **Streamlit Web Dashboard (`app.py`)**: A modern SOC analyst interface providing live metrics, side-by-side XAI telemetry comparisons, interactive tabs, and autonomous containment controls.
 
 ---
 
