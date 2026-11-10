@@ -86,8 +86,6 @@ Here is a look at the v2.0 architecture in action, stress-testing the engine aga
 
 ## 🏗️ Architecture & Features
 
-## 🏗️ Architecture & Features
-
 1. **Telemetry Ingestion Layer (`evtx_parser.py`)**: Parses raw Windows Event logs or enterprise baseline templates (Events `4624` for successful logons and `4769` for Kerberos TGS requests).
 2. **Hybrid Detection Engine (`ai_ueba_engine.py`)**:
    - **Deterministic Signatures:** Flags offline Kerberoasting attempts by identifying weak RC4 (`0x17`) ticket encryption requests on non-machine accounts.
